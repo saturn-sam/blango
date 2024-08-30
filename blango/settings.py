@@ -188,6 +188,7 @@ class Dev(Configuration):
 
     AUTH_USER_MODEL = "blango_auth.User"
 
+
     # TIME_ZONE = 'UTC'
     TIME_ZONE = values.Value("UTC")
     # TIME_ZONE = values.Value("UTC", environ_prefix="BLANGO")
@@ -215,6 +216,10 @@ class Dev(Configuration):
 
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+    ACCOUNT_ACTIVATION_DAYS = 7
 
 class Prod(Dev):
     DEBUG = values.BooleanValue(True)
