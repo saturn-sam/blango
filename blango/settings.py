@@ -56,6 +56,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
+        'blango_auth',
         "crispy_forms",
         "crispy_bootstrap5",
         "debug_toolbar",
@@ -184,6 +185,8 @@ class Dev(Configuration):
     # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
     LANGUAGE_CODE = 'en-us'
+
+    AUTH_USER_MODEL = "blango_auth.User"
 
     # TIME_ZONE = 'UTC'
     TIME_ZONE = values.Value("UTC")
