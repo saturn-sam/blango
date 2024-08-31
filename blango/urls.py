@@ -34,6 +34,7 @@ urlpatterns = [
     path("accounts/profile/", blango_auth.views.profile, name="profile"),
     path("accounts/register/",RegistrationView.as_view(form_class=BlangoRegistrationForm),
     name="django_registration_register",),
+    path("api/v1/", include("blog.api_urls")),
 ]
 
 if settings.DEBUG:
